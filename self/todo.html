@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO-LIST</title>
+    <style>
+        *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+        body{
+            background-color: rgb(224, 255, 239);
+        }
+        form{
+            padding: 20px;
+            text-align: center;
+            background-color: khaki;
+        }
+        form > label , #submit{
+            margin-left: 5px;
+        }
+        table{
+            width: 50%;
+            margin: auto;
+            margin-top: 60px;
+        }
+        td{
+            text-align: center;
+            padding: 5px;
+        }
+        .low{
+            background-color:rgb(240, 216, 123);
+        }
+        .mid{
+            background-color:indianred;
+        }
+        .high{
+            background-color:rgba(255, 38, 0, 0.733);
+        }
+        thead > tr{
+            background-color:firebrick;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="task" >Task:</label>
+        <input type="text" id="task" placeholder="Task.."/>
+
+        <label for="Start_time">Start_Time:</label>
+        <input type="time" id="Start_time" />
+
+        <label for="End_time">End_Time:</label>
+        <input type="time" id="End_time" />
+
+        <label for="Priority">Priority:</label>
+        <select id="priority">
+            <option value="low">Low</option>
+            <option value="mid">Mid</option>
+            <option value="high">High</option>
+        </select>
+
+        <input type="submit" id="submit" value="Submit"/>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td>Task</td>
+                <td>Start_Time</td>
+                <td>End_Time</td>
+                <td>Priority</td>
+                <td colspan="2">Status</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+    <script>
+
+        var form = document.querySelector('form');
+        var body = document.querySelector('tbody');
+        var submit = document.getElementById('submit');
+        submit.addEventListener('click' , addItem);
+
+        var count = 1;
+        
+        function addItem(event){
+            event.preventDefault()
+
+            var task = document.getElementById("task").value;
+            var start_time = document.getElementById("Start_time").value;
+            var end_time = document.getElementById("End_time").value;
+            var priority = document.getElementById("priority").value;
+
+            createItem(task , start_time , end_time , priority);
+       }
+
+       function createItem(task , start_time , end_time , priority){
+
+            var tr = document.createElement("tr");
+            var td_1 = document.createElement("td");
+            td_1.textContent = task;
+            var td_2 = document.createElement("td");
+            td_2.textContent = start_time;
+            var td_3 = document.createElement("td");
+            td_3.textContent = end_time;
+            var td_4 = document.createElement("td");
+            td_4.textContent = priority;
+            var td_5 = document.createElement("td");
+            td_5.textContent = "Complete-"+ count;
+            td_5.addEventListener('click' , completed)
+            var td_6 = document.createElement("td");
+            td_6.textContent = "Delete-"+ count;
+            td_6.addEventListener('click' , deleted)
+
+            tr.appendChild(td_1)
+            tr.appendChild(td_2)
+            tr.appendChild(td_3)
+            tr.appendChild(td_4)
+            tr.appendChild(td_5)
+            tr.appendChild(td_6)
+            tr.setAttribute("class" , priority);
+            body.appendChild(tr)
+
+            count++ ;
+        }
+
+        function completed(event){
+            var element = event.target.parentNode ;
+            element.style.backgroundColor = "green";
+            element.style.textDecorationLine = "Line-through"
+        }
+        function deleted(event){
+            var element = event.target.parentNode ;
+            element.remove();
+        }
+       
+    </script>
+</body>
+</html>

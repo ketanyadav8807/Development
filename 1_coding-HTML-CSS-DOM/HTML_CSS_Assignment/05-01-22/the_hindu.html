@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #e4e3e3;
+        }
+        *{
+            font-family: sans-serif;
+        }
+        .main-page{
+            display: flex;
+            padding: 20px;
+        }
+        .first-div{
+            background-color: #08345B;
+            width: 70%;
+            height: 550px;
+            margin: 10px 20px;
+        }
+        .first-div > img{
+            width: 100%;
+            height: 300px;
+        }
+        .first-div > h1 , .first-div > h3 , .first-div > p{
+            margin-left: 15px;
+            color: whitesmoke;
+        }
+        .first-div > h1 {
+            line-height: 30px;
+        }
+        .first-div > h3{
+            line-height: 10px;
+        }
+        .first-div > p{
+            color: rgb(163, 163, 163);
+        }
+        .second-div{
+            background-color: white;
+            width: 45%;
+            height: 130px;
+            margin: 10px 20px;
+            display: flex;
+        }
+        .second-div > img{
+            width: 20%;
+            height: 130px;
+            margin-right: 20px;
+        }
+        .second > h3{
+            color: #08345B;
+        }
+        .second > p{
+            font-weight: 600;
+        }
+        .first-part > .second-div{
+            width: 70%;
+        }
+        .second-part > .second-div{
+            width: 120%;
+            padding: 5px;
+            margin-top: 30px;
+            margin-left: -150px;
+        }
+     
+        @media only screen and (max-width: 768px) {
+           
+            .main-page{
+                display: flex;
+                flex-direction: column;
+                margin: unset;
+                padding: 10px;
+            }
+            .first-div{
+                width: 100%;
+                margin: unset;
+                padding: unset;
+                margin-bottom: 10px;
+            }
+            .first-part > .second-div{
+                display: none;
+            }
+            .second-part > .second-div{
+                margin: unset;
+                padding: unset;
+            }
+            .one { grid-area: left1; }
+            .two { grid-area: left2; }
+            .three { grid-area: right1; }
+            .four { grid-area: right2; }
+            .second-part {
+               width: 90%;
+               display: grid;
+               grid-template-areas:
+                'left1 left2'
+                'right1 right2';
+                grid-gap: 70px;
+            }
+            @media only screen and (max-width: 600px) {
+               
+            .main-page{
+                display: flex;
+                flex-direction: column;
+                margin: unset;
+                padding: unset;
+            }
+            .second-part{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            .second-part > .second-div{
+                width: 100%;
+                margin: unset;
+                padding: unset;
+            }
+            
+            .first-part > .second-div{
+                margin: unset;
+                width: 100%;
+            }
+            .second-div{
+                width: 100%;
+            }
+            .first-div{
+                width: 100%;
+                margin: unset;
+                padding: unset;
+                margin-bottom: 10px;
+            }
+
+        }
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="main-page">
+        <div class="first-part">
+            <div class="first-div">
+                <img src="https://th.thgim.com/news/national/fwrz7q/article30897008.ece/ALTERNATES/FREE_660/TH24Trump-visit1" />
+                <h1>Ahmedabad joint rally with Trump will be historic, says Modi</h1>
+                <h3>KALLOL BHATTACHERJEE</h3>
+                <h3>SUHASINI HAIDAR</h3>
+                <p>U.S.Presidentto visit Sabarmati Ashram ahead of 'Namaste Trump' event</p>
+            </div>
+            <div class="second-div">
+                <img  src="https://www.thehindu.com/news/national/pk9een/article30897042.ece/ALTERNATES/LANDSCAPE_1200/TH24GUJSTADIUM"/>
+                <div class="second">
+                    <h3>NATIONAL</h3>
+                    <p>Ahmedabad glitters to welcome Donald Trump</p>
+                </div>
+            </div>
+        </div>
+        <div class="second-part">
+            <div class="second-div one">
+                <img  src="https://www.thehindu.com/news/national/pk9een/article30897042.ece/ALTERNATES/LANDSCAPE_1200/TH24GUJSTADIUM"/>
+                <div class="second">
+                    <h3>NATIONAL</h3>
+                    <p>Ahmedabad glitters to welcome Donald Trump</p>
+                </div>
+            </div>
+            <div class="second-div two">
+                <img  src="https://www.thehindu.com/news/national/pk9een/article30897042.ece/ALTERNATES/LANDSCAPE_1200/TH24GUJSTADIUM"/>
+                <div class="second">
+                    <h3>NATIONAL</h3>
+                    <p>Ahmedabad glitters to welcome Donald Trump</p>
+                </div>
+            </div>
+            <div class="second-div three">
+                <img  src="https://www.thehindu.com/news/national/pk9een/article30897042.ece/ALTERNATES/LANDSCAPE_1200/TH24GUJSTADIUM"/>
+                <div class="second">
+                    <h3>NATIONAL</h3>
+                    <p>Ahmedabad glitters to welcome Donald Trump</p>
+                </div>
+            </div>
+            <div class="second-div four">
+                <img  src="https://www.thehindu.com/news/national/pk9een/article30897042.ece/ALTERNATES/LANDSCAPE_1200/TH24GUJSTADIUM"/>
+                <div class="second">
+                    <h3>NATIONAL</h3>
+                    <p>Ahmedabad glitters to welcome Donald Trump</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
