@@ -22,25 +22,50 @@
         }
         .red{
             height: 600px;
-            width: 48%;
+            width: 65%;
             background-color: red;
             margin-top: 20px;
             font-size: 50px;
         }
-        .green{
-            height: 600px;
-            width: 48%;
-            background-color: green;
+        .right{
+            width: 30%;
+        }
+        .right_01 , .right_02 , .right_03{
+            width: 100%;
+            height: 186px;
+            background-color: #00FF2A;
             margin-top: 20px;
             font-size: 50px;
         }
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 768px) {
             .bottom-container{
                 display: unset;
             }
-            .red , .green{
+            .red {
                 height: 200px;
                 width: 100%;
+            }
+            .right{
+                width: 100%;
+                display: flex;
+            }
+            .right_01 , .right_02 , .right_03{
+                width: 35%;
+                margin: 20px 5px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .bottom-container , .right{
+                width: 100%;
+                display: unset;
+            }
+            .red{
+                height: 300px;
+                width: 100%;
+            }
+            .right_01 , .right_02 , .right_03{
+                width: 100%;
+                height: 150px;
             }
         }
     </style>
@@ -50,7 +75,11 @@
         <div class="top-container">Navigation</div>
         <div class="bottom-container">
             <div class="red">left-box</div>
-            <div class="green">right-box</div>
+            <div class="right">
+                <div class="right_01">right_01</div>
+                <div class="right_02">right_02</div>
+                <div class="right_03">right_03</div>
+            </div>
         </div>
     </div>
 </body>
