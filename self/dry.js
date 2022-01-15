@@ -1,33 +1,43 @@
-function equilibriumElement(N, arr){
-    var i = 0;
-    var j = N-1;
+function runProgram(input){
+    input = input.trim().split("\n");
     
-    while(i < j){
-        var sum1 = 0;
-        var sum2 = 0;
-        
-        if(sum1 === sum2){
-            sum1 += arr[i];
-            i++ ;
-        }
-        else if(sum1 > sum2){
-            sum2 += arr[j];
-            j-- ;
-        }
-        else{
-            sum1 += arr[i];
-            i++ ;
-        }
-        
-        if(i === j){
-            if(sum1 === sum2){
-                console.log(i+1);
-            }
-            else{
-                console.log(-1);
-            }
-        }
-        
-    }
+    var testCase = Number(input[0]);
+ 
+     var add = 0;
+     for(var i = 1; i <= testCase; i++){
+       var arrSlice = input.slice( i+add  , i+add+2);
+       add = i;
+       answer(arrSlice)
+     }
+     
+     function answer(){
+         var length = Number(arrSlice[0]);
+         var string = arrSlice[1].split("");
+         var answer_arr = [];
+         
+         answer_arr.push(string[0]);
+         var rep = 1;
+         for(var i = 1; i < length; i++){
+             if(answer_arr[answer_arr.length-1] === string[i]){
+                 if(i === length-1){
+                     rep ++ ;
+                     answer_arr.push(rep);
+                 }
+                 else{
+                  rep ++ ;   
+                 }
+             }
+             else{
+                 answer_arr.push(rep);
+                 answer_arr.push(string[i]);
+                 rep = 1;
+             }
+         }
+         console.log(answer_arr.join(""));
+     }
 }
-equilibriumElement(5,[3,3,5,5,1])
+runProgram(`2
+5
+aabcc
+5
+aazaa`)
