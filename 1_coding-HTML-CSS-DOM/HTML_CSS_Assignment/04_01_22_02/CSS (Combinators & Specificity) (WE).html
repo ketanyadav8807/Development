@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eat_fit</title>
+    <style>
+        *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .main-card-div{
+            width: 35%;
+            height: 600px;
+            background-color: #322F30;
+            margin: auto;
+            text-align: center;
+        }
+        .white-line{
+            width: 15%;
+            height: 4px;
+            background-color: white;
+            margin: 20px auto 50px;
+        }
+        .h1-like{
+            color: #FF006D;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .h2-like{
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+        }
+        .button{
+            color: white;
+            background-color: #FF006D;
+            width: 90%;
+            height: 45px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .fh{
+            color: white;
+        }
+        .first-div{
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .main-card-div{
+           border: 1px solid #322F30;
+        }
+        .main{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .temp{
+            background-color: #000000;
+            width: 20%;
+            padding: 5%;
+            height: 400px;
+            margin-right: 50px;
+            color: white;
+        }
+        .temp > p {
+            font-size: 25px;
+        }
+        .temp > h1{
+            font-size: 40px;
+        }
+        .form{
+            width: 40%;
+            padding: 5%;
+        }
+        #name , #Email , #mobile , #register{
+           margin-bottom: 20px;
+           font-size: 25px;
+        }
+        label{
+            font-size: 25px;
+        }
+        form > div{
+            
+            color: red;
+        }
+        #submit{
+            width: 35%;
+            padding: 1%;
+            height: 45px;
+            margin-left: 60px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="form">
+            <form>
+                <label for="name">NAME:</label><br>
+                <input type="text" id="name" /><br>
+                <label for="Email">EMAIL:</label><br>
+                <input type="email" id="Email" /><br>
+                <label for="mobile">MOBILE:</label><br>
+                <input type="tel" id="mobile" /><br>
+                <div>Enter a valid mobile</div><br>
+                <input type="submit" value="register" id="submit"/>
+            </form>
+        </div>
+        <div class="temp">
+            <p>NAME</p>
+            <h1>MASAI</h1>
+            <p>EMAIL</p>
+            <p>email@masaischool.com</p>
+            <p>MOBILE</p>
+            <p>+91-8808702180</p>
+        </div>
+    </div>
+    <hr>
+    <div class="main-card-div">
+        <div class="first-div">
+            <div class="h1-like fh">Today Sun, 26<sup>th</sup> Apr</div>
+            <div class="h1-like fh">Schedule - 7:00 AM onwards</div>
+        </div>
+        <div class="second-div">
+            <div class="h2-like">Parathe Sharathe with</div class="h2-like">
+            <div class="h1-like">Chef Archana Doshi</div>
+        </div>
+        <div class="white-line"></div>
+        <div class="second-div">
+            <div class="h2-like">Spices and Immunity with</div class="h2-like">
+            <div class="h1-like">Nutrition Expert Manasa Rajan</div>
+        </div>
+        <div class="white-line"></div>
+        <div class="second-div">
+            <div class="h2-like">Postman Vegetables with</div class="h2-like">
+            <div class="h1-like">Cheaf Josan D'Souza</div>
+        </div>
+        <button class="button">SIGN UP NOW</button>
+    </div>
+</body>
+</html>
