@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-container{
+            width: 100%;
+        }
+        .top-container{
+            height: 100px;
+            width: 100%;
+            background-color: yellow;
+            font-size: 60px;
+            font-weight: 500;
+        }
+        .bottom-container{
+            display: flex;
+            justify-content: space-between;
+        }
+        .red{
+            height: 600px;
+            width: 48%;
+            background-color: red;
+            margin-top: 20px;
+            font-size: 50px;
+        }
+        .green{
+            height: 600px;
+            width: 48%;
+            background-color: green;
+            margin-top: 20px;
+            font-size: 50px;
+        }
+        @media screen and (max-width: 600px) {
+            .bottom-container{
+                display: unset;
+            }
+            .red , .green{
+                height: 200px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="top-container">Navigation</div>
+        <div class="bottom-container">
+            <div class="red">left-box</div>
+            <div class="green">right-box</div>
+        </div>
+    </div>
+</body>
+</html>
