@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       form{
+           width: 20%;
+           height: 300px;
+           background-color: thistle;
+           padding: 50px;
+           margin-bottom: 20px;
+       }
+       input{
+           font-size: 20px;
+           margin-bottom: 10px;
+       }
+       #submit{
+           width: 90px;
+           margin: 10px 80px;
+       }
+       label{
+           font-size: 20px;
+       }
+       td{
+           padding: 5px;
+           text-align: center;
+           background-color: turquoise;
+           color:darkred;
+       }
+       thead > tr > td{
+           background-color: tomato;
+           color: black;
+       }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Name"/><br>
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" placeholder="Department"/><br>
+
+        <label for="Sales_1st">Sales 1st year:</label>
+        <input type="text" id="Sales_1st" placeholder="Sales 1st year"/><br>
+
+        <label for="Sales_2d">Sales 2nd year:</label>
+        <input type="text" id="Sales_2nd" placeholder="Sales 2nd year"/><br>
+        <input type="submit" value="Submit" id="submit"/>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="3" style="background-color: darkslateblue;" id="assending">Assending</td>
+                <td colspan="2" style="background-color: darkslateblue;" id="dessending">Dessending</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Employee Dep.</td>
+                <td>Sales_1st_year</td>
+                <td>Sales_2nd_year</td>
+                <td>Avg.._Sales</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+
+        var data = [];
+
+        var body = document.querySelector("tbody");
+        document.getElementById("submit").addEventListener("click" , collectData);
+
+        var assending = document.getElementById("assending");
+        var dessending = document.getElementById("dessending");
+        assending.onclick = function(){
+            sortAssending(data);
+        }
+        dessending.onclick = function(){
+            sortDessending(data);
+        }
+
+
+
+        function collectData(event){
+            event.preventDefault()
+
+            var body = document.querySelector("tbody");
+            var name = document.getElementById("name").value;
+            var dep = document.getElementById("department").value;
+            var sales_01 = document.getElementById("Sales_1st").value;
+            var sales_02 = document.getElementById("Sales_2nd").value;
+          
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+            var td4 = document.createElement("td");
+            var td5 = document.createElement("td");
+            
+            var avrg_sales = (Number(sales_01) + Number(sales_02))/2
+
+            td1.textContent = name;
+            td2.textContent = dep;
+            td3.textContent = sales_01;
+            td4.textContent = sales_02;
+            td5.textContent = avrg_sales;
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+            body.appendChild(tr);
+
+            var item = {
+                "name": name,
+                "dep": dep,
+                "sales_01": sales_01,
+                "sales_02": sales_02,
+                "avrg_sales": avrg_sales
+            }
+            data.push(item);
+
+        }
+
+
+        function sortAssending(data){
+            
+            data = data.sort(function(a,z){
+                return a.avrg_sales - z.avrg_sales ;
+            })
+            arrange_data(data);
+        }
+
+        function sortDessending(data){
+            
+            data = data.sort(function(a,z){
+                return z.avrg_sales - a.avrg_sales ;
+            })
+            arrange_data(data);
+        }
+
+        function arrange_data(data){
+            document.querySelector("tbody").innerHTML = null;
+            data.forEach(fun) ;
+
+            function fun(el){
+
+                var tr = document.createElement("tr");
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                var td3 = document.createElement("td");
+                var td4 = document.createElement("td");
+                var td5 = document.createElement("td");
+
+                td1.textContent = el.name;
+                td2.textContent = el.dep;
+                td3.textContent = el.sales_01;
+                td4.textContent = el.sales_02;
+                td5.textContent = el.avrg_sales;
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                tr.appendChild(td5);
+                document.querySelector("tbody").appendChild(tr);
+
+            }
+        }
+        
+    </script>
+
+</body>
+</html>
