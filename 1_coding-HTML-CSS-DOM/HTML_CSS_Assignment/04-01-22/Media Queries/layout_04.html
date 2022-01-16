@@ -6,81 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .main-container{
-            width: 100%;
-        }
         .top-container{
-            height: 100px;
-            width: 100%;
-            background-color: yellow;
-            font-size: 60px;
-            font-weight: 500;
+             grid-area: header;
+              background-color: yellow; 
+              text-align: center; 
+              padding: 20px;
+            }
+        .Box_01 { 
+            grid-area: menu;
+            background-color: red; 
+            text-align: center;
+            height: 150px;
+            padding: 20px;
+        
         }
-        .bottom-container{
-            display: flex;
-            justify-content: space-between;
+        .Box_02 { 
+            grid-area: main;
+            background-color: green; 
+            text-align: center;
+            height: 150px;
+            padding: 20px;
         }
-        .red{
-            height: 600px;
-            width: 65%;
-            background-color: red;
-            margin-top: 20px;
-            font-size: 50px;
+        .Box_03 { 
+            grid-area: right; 
+            background-color: lightblue; 
+            text-align: center;
+            height: 150px;
+            padding: 20px;
         }
-        .right{
-            width: 30%;
+        .Box_04 { 
+            grid-area: footer; 
+            background-color: grey; 
+            text-align: center;
+            height: 150px;
+            padding: 20px;
         }
-        .right_01 , .right_02 , .right_03{
-            width: 100%;
-            height: 186px;
-            background-color: #00FF2A;
-            margin-top: 20px;
-            font-size: 50px;
+        .main-container{
+            display: grid;
+            grid-gap: 20px;
+            grid-template-areas:
+            'header header header header'
+            'menu main right footer';
         }
+        
+
         @media screen and (max-width: 768px) {
-            .bottom-container{
-                display: unset;
+            .main-container{
+                display: grid;
+                grid-gap: 20px;
+                grid-template-areas:
+                'header header'
+                'menu right'
+                'main footer';
             }
-            .red {
-                height: 200px;
-                width: 100%;
-            }
-            .right{
-                width: 100%;
-                display: flex;
-            }
-            .right_01 , .right_02 , .right_03{
-                width: 35%;
-                margin: 20px 5px;
-            }
+            
         }
         @media screen and (max-width: 600px) {
-            .bottom-container , .right{
-                width: 100%;
-                display: unset;
+            .main-container{
+                display: grid;
+                grid-gap: 20px;
+                grid-template-areas:
+                'header'
+                'menu'
+                'right'
+                'main'
+                'footer';
             }
-            .red{
-                height: 300px;
-                width: 100%;
-            }
-            .right_01 , .right_02 , .right_03{
-                width: 100%;
-                height: 150px;
-            }
-        }
+        } 
     </style>
 </head>
 <body>
     <div class="main-container">
         <div class="top-container">Navigation</div>
-        <div class="bottom-container">
-            <div class="red">left-box</div>
-            <div class="right">
-                <div class="right_01">right_01</div>
-                <div class="right_02">right_02</div>
-                <div class="right_03">right_03</div>
-            </div>
-        </div>
+        <div class="Box_01">Box_01</div>
+        <div class="Box_02">Box_02</div>
+        <div class="Box_03">Box_03</div>
+        <div class="Box_04">Box_04</div>
     </div>
 </body>
 </html>
