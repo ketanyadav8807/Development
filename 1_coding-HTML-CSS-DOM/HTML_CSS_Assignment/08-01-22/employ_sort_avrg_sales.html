@@ -74,7 +74,6 @@
 
         var data = [];
 
-        var body = document.querySelector("tbody");
         document.getElementById("submit").addEventListener("click" , collectData);
 
         var assending = document.getElementById("assending");
@@ -148,6 +147,7 @@
         }
 
         function arrange_data(data){
+            
             document.querySelector("tbody").innerHTML = null;
             data.forEach(fun) ;
 

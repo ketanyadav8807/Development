@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .nav{
+            display: flex;
+            justify-content: flex-end;
+            background-color:indianred;
+            padding: 20px;
+        }
+        .nav div{
+            margin: 0px 50px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="./home.html"><div class="home">HOME</div></a>
+        <a href="./login.html"><div class="login">LOGIN</div></a>
+        <a href="./signup.html"><div class="signup">SIGNUP</div></a>
+    </div>
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Name" />
+        <label for="mobile">Contact No:</label>
+        <input type="tel" id="mobile" placeholder="Contact No" />
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Email" />
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Password" />
+        <input type="submit" value="Sign up" id="button"/>
+    </form>
+
+    <script>
+
+        var button = document.getElementById("button");
+
+        button.addEventListener("click" , handel_signup);
+
+        var data = [];
+
+        function handel_signup(event){
+            event.preventDefault()
+
+            var name = document.getElementById("name").value;
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if(name == "" || mobile == "" || email == "" || password == ""){
+                alert("Please Fill Properly")
+            }
+            else{
+
+                var item = {
+                "name": name,
+                "mobile": mobile,
+                "email": email,
+                "password": password
+                }
+
+                data.push(item);
+                localStorage.setItem("user_data" , JSON.stringify(data));
+
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>
