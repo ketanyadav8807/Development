@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+
+        }
+        var promise = new Promise(function(resolve,reject){
+            var time = 1000;
+
+            if(time === Number(time)){
+                resolve("success");
+            }
+            else{
+                reject("invalid argument , promise accepts only valid number");
+            }
+        })
+
+        promise.then(function(res){
+            var data = {
+                res: "success"
+            }
+            obj[0] = data;
+            console.log(obj);
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+    </script>
+</body>
+</html>
