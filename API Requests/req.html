@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        #container > div{
+            width: 22%;
+            margin: 2%;
+            text-align: center;
+            border: 1px solid grey;
+            background-color:mintcream;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container"></div>
+
+    <script>
+        fetch('https://reqres.in/api/users')
+        .then(function(res){
+            return res.json()
+        })
+        .then(function(res){
+            var container = document.querySelector("#container");
+
+            res.data.forEach(function(el){
+                var div = document.createElement("div");
+                var img = document.createElement("img");
+                img.src = el.avatar ;
+                var name = document.createElement("p");
+                name.innerText = "Name:-"+" "+ el.first_name +" "+el.last_name ;
+                var email = document.createElement("p");
+                email.innerText = "Email:-" +" "+el.email;
+
+                div.appendChild(img);
+                div.appendChild(name);
+                div.appendChild(email);
+                container.appendChild(div);
+                
+            })
+            // console.log(container)
+            // console.log(res.data)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    </script>
+</body>
+</html>
