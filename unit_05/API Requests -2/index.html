@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            padding: 20px;
+            background-color:darkcyan;
+            text-align: center;
+        }
+        form > label , form > input{
+            font-size: 20px;
+            /* border: 1px solid red; */
+        }
+        #btn{
+            margin-top: 10px;
+        }
+        input#checkbox {
+            transform: scale(2);
+            margin-left: 10px;
+        }
+        #container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+        <form>
+        <label for="title">Title:</label>
+        <input type="text" id="title" placeholder="Title" />
+        <input type="checkbox" id="checkbox"><br>
+        <input type="submit" value="ADD" id="btn" />
+    </form>
+    <div id="container"></div>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
