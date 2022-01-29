@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        ul{
+           font-size:30px;
+           margin: 50px 350px; 
+           font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center nav nav-tabs mt-3 sticky-lg-top bg-light">
+        <div class="h1   text-center">Data Types</div>
+        <div class="col">
+            <!-- creating button for data type -->
+            <button class="btn btn-primary btn-lg me-3" id="objects">Objects</button>
+            <button class="btn btn-primary btn-lg me-3" id="arrays">Arrays</button>
+            <button class="btn btn-primary btn-lg me-3" id="functions">Functions</button>
+            <button class="btn btn-primary btn-lg me-3"id="strings"> Strings</button>
+            <button class="btn btn-primary btn-lg me-3" id="number">Number</button>
+            <button class="btn btn-primary btn-lg me-3" id="null">Null</button>
+            <button class="btn btn-primary btn-lg me-3"id="undefined">Undefined</button>
+        </div>
+    </div>
+    <script>
+        // selecting body element in body variable 
+        var body = document.querySelector("body");
+        
+        var object = document.getElementById("objects")
+        var array = document.getElementById("arrays")
+        var functions = document.getElementById("functions")
+        var strings = document.getElementById("strings")
+        var number = document.getElementById("number")
+        var empty = document.getElementById("null")
+        var undefine = document.getElementById("undefined")
+
+        // using event listeners for button 
+         var count1 = 0
+        object.addEventListener("click", function(){
+            
+            // creating ul element
+            var ul = document.createElement("ul")
+
+            // creating li element
+            var li = document.createElement("li")
+            var li1 = document.createElement("li")
+            var li2 = document.createElement("li")
+            var li3 = document.createElement("li")
+            var li4 = document.createElement("li")
+            var li5 = document.createElement("li")
+
+            // storing data in li element
+            li.textContent = "Objects:-"
+            li1.textContent = "Objects are non-primitive datatype."
+            li2.textContent = "It can be altered (variable may be reassigned a new value )."
+            li3.textContent = "Objects are mutable."
+            li4.textContent = " It is used to store various keyed collections and more complex entities."
+            li5.textContent = " Objects can be created using the Object() constructor or the object initializer / literal syntax."
+            li.textContent = "Objects:-"
+
+            // appending ul element to li element
+            ul.appendChild(li)
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            ul.appendChild(li4)
+            ul.appendChild(li5)
+
+            // appnding ul element to body
+            body.appendChild(ul)
+
+            // setting CSS to ul element using setAttribute
+            ul.setAttribute("class","ul")
+        })
+        array.addEventListener("click", function(){
+
+            
+            var ul = document.createElement("ul")
+            var li = document.createElement("li")
+            var li1 = document.createElement("li")
+            var li2 = document.createElement("li")
+            var li3 = document.createElement("li")
+            var li4 = document.createElement("li")
+            var li5 = document.createElement("li")
+
+            li1.textContent = "Arrays are non-primitive datatype."
+            li2.textContent = "Arrays are immutable datatype."
+            li3.textContent = "It can be altered (variable may be reassigned a new value )."
+            li4.textContent = "JavaScript arrays are zero-indexed."
+            li5.textContent = "The first element of an array is at index 0, and the last element is at the index value equal to the value of the array's length property minus 1."
+
+            li.textContent = "Array:-"
+            ul.appendChild(li)
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            ul.appendChild(li4)
+            ul.appendChild(li5)
+            body.appendChild(ul)
+        })
+        functions.addEventListener("click", function(){
+
+            
+            var ul = document.createElement("ul")
+            var li = document.createElement("li")
+            var li1 = document.createElement("li")
+            var li2 = document.createElement("li")
+            var li3 = document.createElement("li")
+            var li4 = document.createElement("li")
+            var li5 = document.createElement("li")
+
+            li.textContent = "Functions:-"
+            li1.textContent = "Functions are non-primitive datatype."
+            li2.textContent = "Functions are mutable datatype."
+            li3.textContent = "It can be altered (variable may be reassigned a new value )."
+            li4.textContent = " JavaScript is a Function object."
+            li5.textContent = "The function name. Can be omitted, in which case the function becomes known as an anonymous function."
+           
+            ul.appendChild(li)
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            ul.appendChild(li4)
+            ul.appendChild(li5)
+            body.appendChild(ul)
+        })
+        strings.addEventListener("click", function(){
+
+            
+            var ul = document.createElement("ul")
+            var li = document.createElement("li")
+            var li1 = document.createElement("li")
+            var li2 = document.createElement("li")
+            var li3 = document.createElement("li")
+            var li4 = document.createElement("li")
+            var li5 = document.createElement("li")
+            
+            li.textContent = "String:-"
+            li1.textContent = "String are primitive datatype"
+            li2.textContent = "String are immutable datatype"
+            li3.textContent = "The variable may be reassigned a new value, but the existing value can not be changed."
+            li4.textContent = "The String object is used to represent and manipulate a sequence of characters."
+            li5.textContent = "Some of the most-used operations on strings are to check their length."
+
+           
+            ul.appendChild(li)
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            ul.appendChild(li4)
+            ul.appendChild(li5)
+            body.appendChild(ul)
+        })
+        number.addEventListener("click", function(){
+
+            
+            var ul = document.createElement("ul")
+            var li = document.createElement("li")
+            var li1 = document.createElement("li")
+            var li2 = document.createElement("li")
+            var li3 = document.createElement("li")
+            var li4 = document.createElement("li")
+            var li5 = document.createElement("li")
+
+            li.textContent = "Number:-"
+            li1.textContent = "Numbers are primitive datatype"
+            li2.textContent = "Numbers are immutable datatype"
+            li3.textContent = "The variable may be reassigned a new value, but the existing value can not be changed."
+            li4.textContent = "Values of other types can be converted to numbers using the Number() function."
+            li5.textContent = "The largest value a Number can hold is about 1.8E308."
+            
+            ul.appendChild(li)
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            ul.appendChild(li4)
+            ul.appendChild(li5)
+            body.appendChild(ul)
+        })
+        empty.addEventListener("click", function(){
+
+            
+            var ul = document.createElement("ul")
+            var li = document.createElement("li")
+            var li1 = document.createElement("li")
+            var li2 = document.createElement("li")
+            var li3 = document.createElement("li")
+            var li4 = document.createElement("li")
+            var li5 = document.createElement("li")
+
+            li.textContent = "Null:-"
+            li1.textContent = "Null is a primitive datatype"
+            li2.textContent = "Null is a immutable datatype"
+            li3.textContent = "The value null represents the intentional absence of any object value."
+            li4.textContent = "It is one of JavaScript's primitive values and is treated as falsy for boolean operations."
+            li5.textContent = "When checking for null or undefined, beware of the differences between equality (==) and identity (===) operators, as the former performs type-conversion."
+
+            
+            ul.appendChild(li)
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            ul.appendChild(li4)
+            ul.appendChild(li5)
+            body.appendChild(ul)
+        })
+        undefine.addEventListener("click", function(){
+
+            
+            var ul = document.createElement("ul")
+            var li = document.createElement("li")
+            var li1 = document.createElement("li")
+            var li2 = document.createElement("li")
+            var li3 = document.createElement("li")
+            var li4 = document.createElement("li")
+            var li5 = document.createElement("li")
+
+            li.textContent = "Undefined:-"
+            li1.textContent = "Undefined is a primitive datatype"
+            li2.textContent = "Undefined is a immutable datatype"
+            li3.textContent = "undefined is a property of the global object."
+            li4.textContent = "That is, it is a variable in global scope."
+            li5.textContent = "The initial value of undefined is the primitive value undefined."
+
+           
+            ul.appendChild(li)
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            ul.appendChild(li4)
+            ul.appendChild(li5)
+            body.appendChild(ul)
+        })
+    </script>
+    
+</body>
+</html>
