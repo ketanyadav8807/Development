@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // using constructor;
+        function grandparent(name){
+            this.grandparent = name;
+        }
+        function parent(name){
+            this.parent = name;
+        }
+        function me(g , p , m){
+           grandparent.call(this,g);
+           parent.apply(this,[p]);
+           this.me = m;
+        }
+        var n = new me("Dav","Vinay","ketan");
+        console.log("using constructor:" , n);
+
+
+        // using Object.create();
+
+        var person = {
+            grandparent: this.grandparent,
+            parent: this.parent,
+            me:this.me
+
+        }
+
+        var family = Object.create(person);
+        family.grandparent = "Dav";
+        family.parent = "Vinay";
+        family.me = "Ketan";
+
+        console.log("using Object.create():" , family);
+    </script>
+</body>
+</html>
