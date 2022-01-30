@@ -15,7 +15,8 @@
         }
 
         function person(sname , age , name , subject){
-            teacher.call(this ,sname , age);
+            teacher.call(this ,sname , age);//here we can use apply also how? = teacher.apply(this , [sname,age]) {it takes only two argument 1st this , second arr of parameter which we want to pass for function}
+            //*here we can use bind also;
             this.name = name;
             this.subject = subject;
         }
