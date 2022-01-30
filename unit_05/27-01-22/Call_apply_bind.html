@@ -12,14 +12,15 @@
         function teacher(sname , age){
             this.school_name = sname;
             this.age = age;
-            this.person = function person(name , subj){
-                this.name = name;
-                this.subject = subj;
-            }
         }
-        var result = new teacher("APS" , 27);
-        result.person("rahul","math")
-        console.log(result);
+
+        function person(sname , age , name , subject){
+            teacher.call(this ,sname , age);
+            this.name = name;
+            this.subject = subject;
+        }
+        var per = new person("APS" , 27 , "Rahul" , "Math")
+        console.log(per);
         
     </script>
 </body>
