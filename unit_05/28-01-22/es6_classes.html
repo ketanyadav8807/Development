@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class grandparent{
+            constructor(grand_name){
+                this.grandparent = grand_name;
+            }
+        }
+
+        class parent extends grandparent{
+            constructor(grand_name , parent_name){
+                super(grand_name);
+                this.parent = parent_name;
+            }
+        }
+
+        class me extends parent{
+            constructor(grand_name , parent_name , me){
+                super(grand_name , parent_name);
+                this.me = me;
+            }
+        }
+
+        var test = new me("dav" , "vinay" , "ketan");
+        console.log(test);
+        
+    </script>
+</body>
+</html>
