@@ -1,0 +1,64 @@
+{
+  "library": [
+    {
+      "book": "Harry Potter",
+      "author": "JK Rowling",
+      "comments": [
+        "Nice Book",
+        "Epic Story"
+      ],
+      "id": 1
+    },
+    {
+      "book": "Harry Potter",
+      "author": "JK Rowling",
+      "comments": [
+        "Nice Book",
+        "Epic Story"
+      ],
+      "id": 2
+    },
+    {
+      "book": "ZERO TO ONE",
+      "author": "Peter Thiel",
+      "comments": [
+        "Nice Book"
+      ],
+      "id": 3
+    },
+    {
+      "book": "Investonomy",
+      "author": "pranjal kamra",
+      "comments": [
+        "Nice Book"
+      ],
+      "id": 4
+    },
+    {
+      "book": "Rich Dad Poor Dad",
+      "author": "Robert Toru Kiyosaki",
+      "comments": [
+        "Nice Book"
+      ],
+      "id": 5
+    },
+    {
+      "book": "Intelligent Investor",
+      "author": "Benjamin Graham",
+      "comments": [
+        "Nice Book"
+      ],
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

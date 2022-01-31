@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+        body{
+            background-color: rgb(224, 255, 239);
+        }
+        form{
+            padding: 20px;
+            text-align: center;
+            background-color: khaki;
+        }
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 50px;
+        }
+        #container > div{
+            width: 30%;
+            padding: 10px;
+            border: 2px solid goldenrod;
+            border-radius: 50px 5px;
+            margin-top: 30px;
+            background-color: rgba(205, 92, 92, 0.568);
+        }
+        #update{
+            margin: 10px;
+            background-color: rgb(115, 216, 115);
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="book">Book_Name:</label>
+        <input type="text" id="book_name" placeholder="Book_Name">
+        <label for="author">Author:</label>
+        <input type="text" id="author" placeholder="author">
+        <label for="comments">Comments:</label>
+        <input type="text" id="comments" placeholder="Comments">
+        <input type="submit" value="ADD" id="btn">
+    </form>
+    <button id="update">Click_&_Patch_first_comment</button>
+    <div id="container"></div>
+
+    <script>
+
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click" , sendData);
+        
+        function sendData(event){
+            event.preventDefault()
+
+            let book_name = document.getElementById("book_name").value;
+            let author = document.getElementById("author").value;
+            let comments = document.getElementById("comments").value;
+
+            var send_data = {
+                book: book_name,
+                author: author,
+                comments: [comments]
+            }
+
+            fetch("http://localhost:3000/library",{
+                method: 'POSt',
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(send_data)
+            })
+            
+        }
+
+        getData()
+        async function getData(){
+            var data = await fetch("http://localhost:3000/library");
+            data = await data.json();
+            data.forEach(function(el){
+                let container = document.querySelector("#container");
+                const div = document.createElement("div");
+
+                let auther_p = document.createElement("p");
+                let book_p = document.createElement("p");
+                let comments_p = document.createElement("p");
+
+                book_p.innerText = `Book : ${el.book}`
+                auther_p.innerText = `Author : ${el.author}`
+                comments_p.innerText = `Comments : ${el.comments}`
+
+                div.appendChild(book_p);
+                div.appendChild(auther_p);
+                div.appendChild(comments_p);
+
+                container.appendChild(div);
+            })
+        }
+
+        //update a comment using patch 
+
+        let bbtn = document.getElementById("update");
+        bbtn.addEventListener("click" , patch)
+
+        function patch(){
+            fetch("http://localhost:3000/library/1",{
+                method: "PATCH",
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: {
+                    
+                        "book": "Harry Potter",
+                        "author": "JK Rowling",
+                        "comments": [
+                            "Nice Book_patched",
+                            "Epic Story"
+                        ],
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>
