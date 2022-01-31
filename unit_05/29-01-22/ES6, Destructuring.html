@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // Problem 1
+            //destructure the name and password from
+                let {name , password , ...all} = {name: 'masai', password: 'admin@123', hostname:'masaischool', client: 'chrome' }
+
+                console.log("Problem 1 = " , "name:" , name , "password:" , password);
+
+
+        //Problem 2
+            // destructure the pincode and rename to pin
+
+        let {name:name2 , address} = {  name: 'masai', address: {  pincode: 560095 }  }
+        let {pincode:pin} = address;
+        console.log("Problem 2 = " , pin)
+
+        //Problem 3
+            //destructure the first value and second value of the array
+
+            let [first_value , second_value , ...rest_value] = [ 100, 200, 500, 600 ] ;
+            console.log("Problem 3 = " ,"first_value:" , first_value , "second_value" , second_value);
+
+        //Problem 4
+            //destructure to get the value 50 from this array
+
+            let [p4_1 , p4_2] = [ 100, [  50, 60, 70  ]   ] ;
+            let [value_p4 , ...allp4] = p4_2 
+            console.log("Problem 4 = " ,value_p4);
+
+        //Problem 5
+            //destructure to get the value 2,3 into a new array
+
+            let [last_part1 , object_arr]  =  [  1, {  arr: [ 1, 2, 3 ] } ];
+            let {arr} = object_arr ;
+            let [l , ...a] = arr
+            console.log("Problem 5 = " ,a);
+    </script>
+</body>
+</html>
