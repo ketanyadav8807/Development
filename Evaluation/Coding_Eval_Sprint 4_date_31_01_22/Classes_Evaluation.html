@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class rectangle{
+            constructor(edge1 , edge2){
+                this.edge1 = edge1,
+                this.edge2 = edge2
+            }
+            get area(){
+                return (`The area of Rectangle is ${this.edge1*this.edge2}`);
+            }
+        }
+
+        class square extends rectangle{
+            constructor(edge1 , edge2){
+                super(edge1 , edge2);
+                this.edge = edge1;
+            }
+            get perimeter(){
+                return (`The perimeter of square is ${4*this.edge}`)
+            }
+        }
+
+        let test = new square(2,3);
+        console.log(test.area);
+        console.log(test.perimeter);
+        
+    </script>
+</body>
+</html>
