@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class circle{
+            constructor(radius){
+                this.radius = radius
+            }
+            get Circumference(){
+                return (`The circumference of the circle is ${6.283*this.radius}`);
+            }
+        }
+
+        var test = new circle(4);
+        console.log(test.Circumference);
+
+
+        class calculator{
+            constructor(a,b){
+                this.a = a;
+                this.b = b;
+            }
+            get add(){
+                return (`The sum of ${this.a} and ${this.b} is ${this.a + this.b}`);
+            }
+            get Subtract(){
+                return (`The Subtract of ${this.a} and ${this.b} is ${this.a - this.b}`);
+            }
+            get Divide(){
+                return (`The divide of ${this.a} and ${this.b} is ${this.a / this.b}`);
+            }
+            get Multiply(){
+                return (`The product  of ${this.a} and ${this.b} is ${this.a - this.b}`);
+            }
+        }
+        let test_calcu = new calculator(4,2);
+        console.log(test_calcu.add , test_calcu.Subtract , test_calcu.Multiply , test_calcu.Divide);
+    </script>
+</body>
+</html>
